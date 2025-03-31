@@ -11,8 +11,12 @@ public class TestController {
     public String test1(HttpServletRequest req) {
         String str1 = req.getParameter("data1");
         String str2 = req.getParameter("data2");
-        System.out.println("data1 : "+str1);
-        System.out.println("data2 : "+str2);
+        String str3[] = req.getParameterValues("data3");
+        System.out.println("data1 : " + str1);
+        System.out.println("data2 : " + str2);
+        for(String a:str3) {
+            System.out.println("data3 : " + a);
+        }
         return "result";
     }
 
