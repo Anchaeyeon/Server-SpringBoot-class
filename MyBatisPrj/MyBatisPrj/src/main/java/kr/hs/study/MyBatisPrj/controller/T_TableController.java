@@ -18,7 +18,7 @@ public class T_TableController {
         String result = "";
 
         for (int i=1; i<=9; i++) {
-            result += gugudan + " * " + i + " = " + gugudan*i;
+            result += gugudan + " * " + i + " = " + gugudan*i + " ";
             System.out.println(gugudan + " * " + i + " = " + gugudan*i);
         }
 
