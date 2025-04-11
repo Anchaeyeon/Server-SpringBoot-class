@@ -3,19 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <style>
-    a {
-      color: gray;
-      text-decoration : none;
-    }
-  </style>
 </head>
 <body>
-  <a th:href="@{/}">Home</a> |
-  <a th:href="@{/mav}">ModelAndView</a> |
-  <a th:href="@{/t_Table}">Time_Table</a> |
-  <a th:href="@{/score}">Score</a> |
-  <a th:href="@{/login}">Login</a> |
-  <a th:href="@{/memo}">Memo</a>
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
 </body>
 </html>

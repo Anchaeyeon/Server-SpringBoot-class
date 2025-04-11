@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="menuFragment">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    a {
+      color: gray;
+      text-decoration : none;
+    }
+  </style>
+</head>
+<body>
+  <menu>
+    <a th:href="@{/}">Home</a><a> | </a>
+    <a th:href="@{/mav}">ModelAndView</a><a> | </a>
+    <a th:href="@{/t_table}">Time_Table</a><a> | </a>
+    <a th:href="@{/score}">Score</a><a> | </a>
+    <a th:href="@{/login}">Login</a><a> | </a>
+    <a th:href="@{/Memo}">Memo</a><a> | </a>
+    <a th:href="@{/Todo}">Todo</a><a> | </a>
+    <a th:href="@{/bbs}">Bbs</a><a> | </a>
+    <a th:href="@{/shop}">ShoppingMall</a><a> | </a>
+  </menu>
+</body>
+</th:block>
+</html>
