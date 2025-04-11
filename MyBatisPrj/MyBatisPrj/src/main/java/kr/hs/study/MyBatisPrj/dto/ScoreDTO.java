@@ -8,4 +8,6 @@ public class ScoreDTO {
     private int korean;
     private int english;
     private int math;
+    private int total;
+    private double avg;
 }

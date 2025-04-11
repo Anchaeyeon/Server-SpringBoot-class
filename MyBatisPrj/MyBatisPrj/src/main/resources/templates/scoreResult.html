@@ -6,6 +6,11 @@
 </head>
 <body>
 <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
-<li th:each="value : ${results}" th:text="${value}"></li>
+이름 : <span th:text="${scoreData.name}"></span>
+국어 : <span th:text="${scoreData.korean}"></span>
+영어 : <span th:text="${scoreData.english}"></span>
+수학 : <span th:text="${scoreData.math}"></span>
+총점 : <span th:text="${scoreData.total}"></span>
+평균 : <span th:text="${scoreData.avg}"></span>
 </body>
 </html>
