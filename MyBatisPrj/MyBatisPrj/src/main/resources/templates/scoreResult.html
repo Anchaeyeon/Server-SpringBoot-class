@@ -6,11 +6,11 @@
 </head>
 <body>
 <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
-이름 : <span th:text="${scoreData.name}"></span>
-국어 : <span th:text="${scoreData.korean}"></span>
-영어 : <span th:text="${scoreData.english}"></span>
-수학 : <span th:text="${scoreData.math}"></span>
-총점 : <span th:text="${scoreData.total}"></span>
+이름 : <span th:text="${scoreData.name}"></span><br>
+국어 : <span th:text="${scoreData.korean}"></span><br>
+영어 : <span th:text="${scoreData.english}"></span><br>
+수학 : <span th:text="${scoreData.math}"></span><br>
+총점 : <span th:text="${scoreData.total}"></span><br>
 평균 : <span th:text="${scoreData.avg}"></span>
 </body>
 </html>
