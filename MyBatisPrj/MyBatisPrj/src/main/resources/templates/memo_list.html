@@ -6,6 +6,11 @@
 </head>
 <body>
 <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
-
+<div th:each="item:${data}"> <!--data에 있는 값을 item 변수에 넣겠다-->
+    <p th:text="${item.idx}"></p>
+    <p th:text="${item.writer}"></p>
+    <p th:text="${item.memo}"></p>
+    <p th:text="${item.post_date}"></p>
+</div>
 </body>
 </html>
