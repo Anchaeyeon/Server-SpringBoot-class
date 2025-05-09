@@ -21,6 +21,12 @@ public class MemoController {
         return "memo";
     }
 
+    @PostMapping("/memo_done")
+    public String insert(MemoDTO dto) {
+        service.insert(dto);
+        return "redirect:/memo/list";
+    }
+
     @GetMapping("/memo/list")
     public String listAll(Model model) {
         List<MemoDTO> all = service.listAll();
