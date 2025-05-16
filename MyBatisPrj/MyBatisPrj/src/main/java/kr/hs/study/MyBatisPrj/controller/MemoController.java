@@ -18,14 +18,16 @@ public class MemoController {
     private MemoService service;
 
     @GetMapping("/Memo")
-    public String getMemo() {
+    public String getMemo(Model model) {
+        List<MemoDTO> all = service.listAll();
+        model.addAttribute("data", all);
         return "memo";
     }
 
     @PostMapping("/memo_done")
     public String insert(MemoDTO dto) {
         service.insert(dto);
-        return "redirect:/memo/list";
+        return "redirect:/Memo";
     }
 
     @GetMapping("/edit/{idx}")
@@ -34,13 +36,5 @@ public class MemoController {
         MemoDTO dto = service.selectOne(idx);
         model.addAttribute("one", dto);
         return "edit_form";
-    }
-
-    @GetMapping("/memo/list")
-    public String listAll(Model model) {
-        List<MemoDTO> all = service.listAll();
-        model.addAttribute("data", all);
-        System.out.println("size: " + all.size());
-        return "memo_list";
     }
 }
