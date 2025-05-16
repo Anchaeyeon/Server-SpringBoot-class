@@ -18,4 +18,7 @@ public interface MemoService {
 
     // 4. select
     public List<MemoDTO> listAll();
+
+    // 값 하나 갖고오기
+    public MemoDTO selectOne(int idx);
 }

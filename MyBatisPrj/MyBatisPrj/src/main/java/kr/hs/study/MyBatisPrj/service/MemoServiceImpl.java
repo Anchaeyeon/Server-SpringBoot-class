@@ -31,4 +31,9 @@ public class MemoServiceImpl implements MemoService{
     public List<MemoDTO> listAll() {
         return dao.listAll();
     }
+
+    @Override
+    public MemoDTO selectOne(int idx) {
+        return dao.selectOne(idx);
+    }
 }
