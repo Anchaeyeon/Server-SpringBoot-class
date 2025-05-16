@@ -37,4 +37,10 @@ public class MemoController {
         model.addAttribute("one", dto);
         return "edit_form";
     }
+
+    @PostMapping("/edit")
+    public String update_form(MemoDTO dto) {
+        service.update(dto);
+        return "redirect:/Memo";
+    }
 }

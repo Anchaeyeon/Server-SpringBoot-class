@@ -11,7 +11,7 @@ public interface MemoService {
     public void insert(MemoDTO dto);
 
     // 2. update
-    public void update(int idx);
+    public void update(MemoDTO dto);
 
     // 3. delete
     public void delete(int idx);

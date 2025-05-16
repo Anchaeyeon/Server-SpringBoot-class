@@ -11,4 +11,7 @@
     <select id="selectOne" resultType="kr.hs.study.MyBatisPrj.dto.MemoDTO">
         select * from memo where idx=#{idx}
     </select>
+    <update id="update">
+        update memo set writer=#{writer}, memo=#{memo} where idx=#{idx}
+    </update>
 </mapper>

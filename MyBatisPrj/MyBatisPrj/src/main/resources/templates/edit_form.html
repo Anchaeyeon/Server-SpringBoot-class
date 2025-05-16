@@ -9,7 +9,7 @@
 <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
 <form method="post" action="/edit" style="padding: 2rem;">
     <h1>NOTE MEMO</h1>
-<!--    <input type="hidden" th:value="${item.idx}">-->
+    <input name="idx" type="hidden" th:value="${one.idx}">
     <div class="mb-3" style="max-width: 500px;">
         <label for="exampleFormControlInput1" class="form-label">Writer</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" name="writer" style="height: 40px;" th:value="${one.writer}">

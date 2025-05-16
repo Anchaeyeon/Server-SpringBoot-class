@@ -18,8 +18,8 @@ public class MemoServiceImpl implements MemoService{
     }
 
     @Override
-    public void update(int idx) {
-
+    public void update(MemoDTO dto) {
+        dao.update(dto);
     }
 
     @Override
