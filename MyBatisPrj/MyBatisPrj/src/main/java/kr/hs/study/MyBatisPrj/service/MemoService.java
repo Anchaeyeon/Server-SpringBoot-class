@@ -5,7 +5,7 @@ import kr.hs.study.MyBatisPrj.dto.MemoDTO;
 import java.util.List;
 
 public interface MemoService {
-    // crod 삽입 조회 수정 삭제
+    // crud 삽입 조회 수정 삭제
 
     // 1. insert
     public void insert(MemoDTO dto);
