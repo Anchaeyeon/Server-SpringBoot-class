@@ -31,7 +31,7 @@ public class TodoServiceImpl implements TodoService{
 
     @Override
     public List<TodoDTO> selectAll() {
-        return List.of();
+        return dao.selectAll();
     }
 
     @Override

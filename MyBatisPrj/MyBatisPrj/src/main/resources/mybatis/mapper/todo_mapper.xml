@@ -4,4 +4,7 @@
     <insert id="insert" parameterType="kr.hs.study.MyBatisPrj.dto.TodoDTO">
         insert into TodoList(id, todo, pw) values(TodoList_seq.nextval, #{todo}, #{pw})
     </insert>
+    <select id="selectAll" resultType="kr.hs.study.MyBatisPrj.dto.TodoDTO">
+        select * from TodoList order by id asc
+    </select>
 </mapper>

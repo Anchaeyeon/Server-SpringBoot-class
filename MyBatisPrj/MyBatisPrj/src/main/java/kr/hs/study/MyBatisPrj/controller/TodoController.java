@@ -1,5 +1,6 @@
 package kr.hs.study.MyBatisPrj.controller;
 
+import kr.hs.study.MyBatisPrj.dto.MemoDTO;
 import kr.hs.study.MyBatisPrj.dto.TodoDTO;
 import kr.hs.study.MyBatisPrj.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,9 @@ public class TodoController {
     private TodoService service;
 
     @GetMapping("/Todo")
-    public String goMemo() {
+    public String goMemo(Model model) {
+        List<TodoDTO> allTodo = service.selectAll();
+        model.addAttribute("todoall", allTodo);
         return "todo";
     }
 

@@ -8,25 +8,52 @@
     #check-btn { display: none; }
     #check-btn:checked ~ .plusTodo { display: block; }
     .plusTodo { display: none; }
+
+    h1 {
+      margin: 35px;
+    }
+
+    label {
+      margin-left: 35px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      max-width: 700px;
+      margin: 35px;
+    }
   </style>
 </head>
 <body>
 <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
-<h1>TodoList</h1>
+<h1 th:text="'TodoList'"></h1>
 <form method="post" action="todo_done">
   <input id="check-btn" type="checkbox" />
   <label for="check-btn" style="color: green; font-weight: bold;">ADD</label>
   <ul class="plusTodo">
     <div class="mb-3" style="max-width: 500px;">
-      <label for="exampleFormControlInput1" class="form-label" style="color: green">Todo</label>
+      <label for="exampleFormControlInput1" class="form-label" style="color: green;">Todo</label>
       <textarea type="text" class="form-control" id="exampleFormControlInput1" name="todo" style="height: 100px;"></textarea>
     </div>
     <div class="mb-3" style="max-width: 500px;">
-      <label for="exampleFormControlTextarea1" class="form-label" style="color: green">Password</label>
-      <input class="form-control" id="exampleFormControlTextarea1" name="pw" style="height: 40px;">
+      <label for="exampleFormControlTextarea1" class="form-label" style="color: green;">Password</label>
+      <input type="password" class="form-control" id="exampleFormControlTextarea1" name="pw" style="height: 40px;">
     </div>
     <button type="submit" class="btn btn-outline-success">DONE</button>
   </ul>
 </form>
+<table class="table">
+  <tr>
+    <td th:text="ID"></td>
+    <td th:text="Todo"></td>
+    <td th:text="Post_Todo"></td>
+    <td th:text="ETC"></td>
+  </tr>
+  <tr th:each="item:${todoall}">
+    <td th:text="${item.id}"></td>
+    <td th:text="${item.todo}"></td>
+    <td th:text="${item.post_todo}"></td>
+  </tr>
+</table>
 </body>
 </html>
