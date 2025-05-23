@@ -35,7 +35,7 @@ public class MemoController {
         System.out.println("idx: " + idx);
         MemoDTO dto = service.selectOne(idx);
         model.addAttribute("one", dto);
-        return "edit_form";
+        return "memo_edit";
     }
 
     @PostMapping("/edit")
