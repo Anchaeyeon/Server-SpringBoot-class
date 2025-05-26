@@ -48,4 +48,10 @@ public class TodoController {
 
         return "redirect:/update/"+dto.getId();
     }
+
+    @GetMapping("/deleteTodo/{id}")
+    public String delete_form(@PathVariable("id") int id) {
+        service.delete(id);
+        return "redirect:/Todo";
+    }
 }

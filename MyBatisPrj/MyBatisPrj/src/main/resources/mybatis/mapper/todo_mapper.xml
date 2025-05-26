@@ -13,4 +13,7 @@
     <update id="update">
         update TodoList set todo=#{todo} where id=#{id}
     </update>
+    <delete id="delete">
+        delete from TodoList where id=#{id}
+    </delete>
 </mapper>

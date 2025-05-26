@@ -8,7 +8,7 @@ import java.util.List;
 public interface TodoService {
     public void insert(TodoDTO dto);
     public void update(TodoDTO dto);
-    public void delete();
+    public void delete(int id);
     public List<TodoDTO> selectAll();
     public TodoDTO selectOne(int id);
 }

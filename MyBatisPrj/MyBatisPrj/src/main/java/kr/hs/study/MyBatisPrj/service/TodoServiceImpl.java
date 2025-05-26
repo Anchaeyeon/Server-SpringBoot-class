@@ -25,8 +25,8 @@ public class TodoServiceImpl implements TodoService{
     }
 
     @Override
-    public void delete() {
-
+    public void delete(int id) {
+        dao.delete(id);
     }
 
     @Override
