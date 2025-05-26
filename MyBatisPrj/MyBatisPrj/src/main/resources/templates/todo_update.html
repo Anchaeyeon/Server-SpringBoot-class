@@ -22,9 +22,9 @@
 </head>
 <body>
 <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
-<h1 th:text="'TodoList'"></h1>
-<input name="id" type="hidden" th:value="${updateOne.id}">
 <form method="post" action="/update">
+    <h1 th:text="'TodoList'"></h1>
+    <input name="id" type="hidden" th:value="${updateOne.id}">
     <ul class="plusTodo">
         <div class="mb-3" style="max-width: 500px;">
             <label for="exampleFormControlInput1" class="form-label" style="color: green;">Todo</label>

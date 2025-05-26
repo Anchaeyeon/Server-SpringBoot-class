@@ -10,4 +10,7 @@
     <select id="selectOne" resultType="kr.hs.study.MyBatisPrj.dto.TodoDTO">
         select * from TodoList where id=#{id}
     </select>
+    <update id="update">
+        update TodoList set todo=#{todo} where id=#{id}
+    </update>
 </mapper>

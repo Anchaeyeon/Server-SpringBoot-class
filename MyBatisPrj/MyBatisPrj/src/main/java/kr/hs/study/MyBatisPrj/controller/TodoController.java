@@ -31,9 +31,15 @@ public class TodoController {
     }
 
     @GetMapping("/update/{id}")
-    public String update_form(@PathVariable("id") int id, Model model) {
+    public String updateOne_form(@PathVariable("id") int id, Model model) {
         TodoDTO dto = service.selectOne(id);
         model.addAttribute("updateOne", dto);
         return "todo_update";
+    }
+
+    @PostMapping("/update")
+    public String update_form(TodoDTO dto) {
+        service.update(dto);
+        return "redirect:/Todo";
     }
 }
