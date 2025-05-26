@@ -53,6 +53,9 @@
     <td th:text="${item.id}"></td>
     <td th:text="${item.todo}"></td>
     <td th:text="${item.post_todo}"></td>
+    <td><a th:href="@{'/update/'+${item.id}}">Update</a>
+        <a th:href="@{'/delete/'+${item.id}}">Delete</a>
+    </td>
   </tr>
 </table>
 </body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        h1 {
+          margin: 35px;
+        }
+
+        label {
+          margin-left: 35px;
+          margin-bottom: 20px;
+        }
+
+        table {
+          max-width: 700px;
+          margin: 35px;
+        }
+    </style>
+</head>
+<body>
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+<h1 th:text="'TodoList'"></h1>
+<input name="id" type="hidden" th:value="${updateOne.id}">
+<form method="post" action="/update">
+    <ul class="plusTodo">
+        <div class="mb-3" style="max-width: 500px;">
+            <label for="exampleFormControlInput1" class="form-label" style="color: green;">Todo</label>
+            <textarea type="text" class="form-control" id="exampleFormControlInput1" name="todo" style="height: 100px;" th:text="${updateOne.todo}"></textarea>
+        </div>
+        <div class="mb-3" style="max-width: 500px;">
+            <label for="exampleFormControlTextarea1" class="form-label" style="color: green;">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlTextarea1" name="pw" style="height: 40px;">
+        </div>
+        <button type="submit" class="btn btn-outline-success">DONE</button>
+    </ul>
+</form>
+</body>
+</html>

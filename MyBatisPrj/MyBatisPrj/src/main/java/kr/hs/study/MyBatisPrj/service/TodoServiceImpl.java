@@ -20,8 +20,8 @@ public class TodoServiceImpl implements TodoService{
     }
 
     @Override
-    public void update() {
-
+    public void update(TodoDTO dto) {
+        dao.update(dto);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class TodoServiceImpl implements TodoService{
     }
 
     @Override
-    public TodoDTO selectOne() {
-        return null;
+    public TodoDTO selectOne(int id) {
+        return dao.selectOne(id);
     }
 }

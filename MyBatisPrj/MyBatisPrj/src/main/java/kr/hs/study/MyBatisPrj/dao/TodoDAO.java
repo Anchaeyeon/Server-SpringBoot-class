@@ -9,8 +9,8 @@ import java.util.List;
 @Mapper
 public interface TodoDAO {
     public void insert(TodoDTO dto);
-    public void update();
+    public void update(TodoDTO dto);
     public void delete();
     public List<TodoDTO> selectAll();
-    public TodoDTO selectOne();
+    public TodoDTO selectOne(int id);
 }
