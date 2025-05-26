@@ -39,7 +39,13 @@ public class TodoController {
 
     @PostMapping("/update")
     public String update_form(TodoDTO dto) {
-        service.update(dto);
-        return "redirect:/Todo";
+        TodoDTO originalData = service.selectOne(dto.getId());
+
+        if (originalData.getPw().equals(dto.getPw())) {
+            service.update(dto);
+            return "redirect:/Todo";
+        }
+
+        return "redirect:/update/"+dto.getId();
     }
 }
