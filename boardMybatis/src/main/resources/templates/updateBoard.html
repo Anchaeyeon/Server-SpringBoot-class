@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Board</title>
+</head>
+<body>
+<form action="/board/update" method="post">
+  <input type="hidden" name="id" th:value="${upboardone.id}">
+  <input th:value="${upboardone.boardWriter}" name="boardWriter"><br>
+  <input type="password" placeholder="비밀번호" name="boardPass"><br>
+  <input th:value="${upboardone.boardTitle}" name="boardTitle"><br>
+  <input th:value="${upboardone.boardContents}" name="boardContents"><br>
+  <button type="submit">수정</button>
+</form>
+</body>
+</html>

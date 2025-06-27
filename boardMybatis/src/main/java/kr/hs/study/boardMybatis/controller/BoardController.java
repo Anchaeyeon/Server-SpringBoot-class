@@ -42,7 +42,27 @@ public class BoardController {
     @GetMapping("/board/showone/{id}")
     public String showOne(@PathVariable("id") int id, Model model) {
         BoardDTO oneBoard = service.selectOne(id);
+        System.out.println("ID: " + id);
         model.addAttribute("boardone", oneBoard);
         return "showOneBoard";
+    }
+
+    @GetMapping("/board/update/{id}")
+    public String update(@PathVariable("id") int id, Model model) {
+        BoardDTO updateBoard = service.selectOne(id);
+        model.addAttribute("upboardone", updateBoard);
+        return "updateBoard";
+    }
+
+    @PostMapping("/board/update")
+    public String update(BoardDTO dto) {
+        BoardDTO boardValue = service.selectOne(dto.getId());
+
+        if (boardValue.getBoardPass().equals(dto.getBoardPass())) {
+            service.update(dto);
+            return "redirect:/board/showone/" + dto.getId();
+        }
+
+        return "redirect:/board/update/" + dto.getId();
     }
 }

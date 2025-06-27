@@ -26,4 +26,14 @@ public class BoardServiceImpl implements BoardService{
     public BoardDTO selectOne(int id) {
         return dao.selectOne(id);
     }
+
+    @Override
+    public void update(BoardDTO dto) {
+        dao.update(dto);
+    }
+
+//    @Override
+//    public void delete(int id) {
+//        dao.delete(id);
+//    }
 }

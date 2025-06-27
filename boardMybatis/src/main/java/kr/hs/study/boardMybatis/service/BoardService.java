@@ -8,4 +8,6 @@ public interface BoardService {
     public void insert(BoardDTO dto);
     public List<BoardDTO> selectAll();
     public BoardDTO selectOne(int id);
+    public void update(BoardDTO dto);
+//    public void delete(int id);
 }
