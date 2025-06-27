@@ -7,4 +7,7 @@
     <select id="selectAll" resultType="kr.hs.study.boardMybatis.dto.BoardDTO">
         select * from board order by id asc
     </select>
+    <select id="selectOne" resultType="kr.hs.study.boardMybatis.dto.BoardDTO">
+        select * from board where id=#{id}
+    </select>
 </mapper>

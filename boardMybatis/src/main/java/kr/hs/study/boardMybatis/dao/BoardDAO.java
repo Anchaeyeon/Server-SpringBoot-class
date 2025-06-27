@@ -9,4 +9,5 @@ import java.util.List;
 public interface BoardDAO {
     public void insert(BoardDTO dto);
     public List<BoardDTO> selectAll();
+    public BoardDTO selectOne(int id);
 }

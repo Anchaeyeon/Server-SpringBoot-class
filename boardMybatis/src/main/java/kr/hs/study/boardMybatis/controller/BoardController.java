@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -36,5 +37,12 @@ public class BoardController {
         List<BoardDTO> allBoard = service.selectAll();
         model.addAttribute("boardall", allBoard);
         return "showBoard";
+    }
+
+    @GetMapping("/board/showone/{id}")
+    public String showOne(@PathVariable("id") int id, Model model) {
+        BoardDTO oneBoard = service.selectOne(id);
+        model.addAttribute("boardone", oneBoard);
+        return "showOneBoard";
     }
 }
