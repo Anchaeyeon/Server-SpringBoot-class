@@ -4,4 +4,7 @@
     <insert id="insert" parameterType="kr.hs.study.boardMybatis.dto.BoardDTO">
         insert into board(id, boardWriter, boardPass, boardTitle, boardContents) values(board_seq.nextval, #{boardWriter}, #{boardPass}, #{boardTitle}, #{boardContents})
     </insert>
+    <select id="selectAll" resultType="kr.hs.study.boardMybatis.dto.BoardDTO">
+        select * from board order by id asc
+    </select>
 </mapper>
