@@ -32,8 +32,8 @@ public class BoardServiceImpl implements BoardService{
         dao.update(dto);
     }
 
-//    @Override
-//    public void delete(int id) {
-//        dao.delete(id);
-//    }
+    @Override
+    public void delete(int id) {
+        dao.delete(id);
+    }
 }

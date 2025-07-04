@@ -13,7 +13,7 @@
     <update id="update">
         update board set boardWriter=#{boardWriter}, boardTitle=#{boardTitle}, boardContents=#{boardContents} where id=#{id}
     </update>
-<!--    <delete id="delete">-->
-<!--        delete from board where id=#{id}-->
-<!--    </delete>-->
+    <delete id="delete">
+        delete from board where id=#{id}
+    </delete>
 </mapper>

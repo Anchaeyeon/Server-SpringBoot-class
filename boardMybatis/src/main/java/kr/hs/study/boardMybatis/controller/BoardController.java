@@ -65,4 +65,23 @@ public class BoardController {
 
         return "redirect:/board/update/" + dto.getId();
     }
+
+    @GetMapping("/board/delete/{id}")
+    public String delete(@PathVariable("id") int id, Model model) {
+        BoardDTO deleteBoard = service.selectOne(id);
+        model.addAttribute("delboardone", deleteBoard);
+        return "deleteBoard";
+    }
+
+    @PostMapping("/board/delete")
+    public String delete(BoardDTO dto) {
+        BoardDTO boardValue = service.selectOne(dto.getId());
+
+        if (boardValue.getBoardPass().equals(dto.getBoardPass())) {
+            service.delete(dto.getId());
+            return "redirect:/board";
+        }
+
+        return "redirect:/board/delete/" + dto.getId();
+    }
 }

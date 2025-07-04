@@ -9,5 +9,5 @@ public interface BoardService {
     public List<BoardDTO> selectAll();
     public BoardDTO selectOne(int id);
     public void update(BoardDTO dto);
-//    public void delete(int id);
+    public void delete(int id);
 }
