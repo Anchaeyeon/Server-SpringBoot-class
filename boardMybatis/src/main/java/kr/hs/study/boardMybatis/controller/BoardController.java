@@ -41,6 +41,7 @@ public class BoardController {
 
     @GetMapping("/board/showone/{id}")
     public String showOne(@PathVariable("id") int id, Model model) {
+        service.updateHits(id);
         BoardDTO oneBoard = service.selectOne(id);
         System.out.println("ID: " + id);
         model.addAttribute("boardone", oneBoard);
@@ -84,4 +85,6 @@ public class BoardController {
 
         return "redirect:/board/delete/" + dto.getId();
     }
+
+
 }

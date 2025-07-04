@@ -36,4 +36,9 @@ public class BoardServiceImpl implements BoardService{
     public void delete(int id) {
         dao.delete(id);
     }
+
+    @Override
+    public void updateHits(int id) {
+        dao.updateHits(id);
+    }
 }
