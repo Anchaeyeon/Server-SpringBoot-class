@@ -11,7 +11,10 @@
       margin: 35px;
     }
     button {
-      margin-left: 30px;
+      margin-left: 35px;
+    }
+    .comment {
+      margin: 35px;
     }
     </style>
 </head>
@@ -45,6 +48,12 @@
 <button type="button" onclick="listFn()">목록</button>
 <button type="button" onclick="updateFn()">수정</button>
 <button onclick="deleteFn()">삭제</button>
+<form action="/comment/save" method="post" class="comment">
+  <input type="hidden" name="boardId" th:value="${boardone.id}">
+  <input type="text" placeholder="작성자" name="commentWriter">
+  <input type="text" placeholder="내용" name="commentContents">
+  <button type="submit">댓글작성</button>
+</form>
 </body>
 <script>
   const listFn=()=>{
