@@ -16,32 +16,41 @@
     .comment {
       margin: 35px;
     }
+    h5 {
+      margin-left: 35px;
+      margin-bottom: -25px;
+      margin-top: 50px;
+      font-weight: bold;
+    }
+    .title {
+      font-weight: bold;
+    }
     </style>
 </head>
 <body>
 <table class="table table-hover">
   <tr>
-    <td th:text="ID"></td>
+    <td th:text="ID" class="title"></td>
     <td th:text="${boardone.id}"></td>
   </tr>
   <tr>
-    <td th:text="WRITER"></td>
+    <td th:text="WRITER" class="title"></td>
     <td th:text="${boardone.boardWriter}"></td>
   </tr>
   <tr>
-    <td th:text="DATE"></td>
+    <td th:text="DATE" class="title"></td>
     <td th:text="${boardone.boardCreatedTime}"></td>
   </tr>
   <tr>
-    <td th:text="HITS"></td>
+    <td th:text="HITS" class="title"></td>
     <td th:text="${boardone.boardHits}"></td>
   </tr>
   <tr>
-    <td th:text="TITLE"></td>
+    <td th:text="TITLE" class="title"></td>
     <td th:text="${boardone.boardTitle}"></td>
   </tr>
   <tr>
-    <td th:text="CONTENTS"></td>
+    <td th:text="CONTENTS" class="title"></td>
     <td th:text="${boardone.boardContents}"></td>
   </tr>
 </table>
@@ -54,6 +63,19 @@
   <input type="text" placeholder="내용" name="commentContents">
   <button type="submit">댓글작성</button>
 </form>
+<h5 th:text="'댓글'"></h5>
+<table class="table table-hover">
+  <tr class="title">
+    <td th:text="WRITER"></td>
+    <td th:text="CONTENTS"></td>
+    <td th:text="DATE"></td>
+  </tr>
+  <tr th:each="item:${showCom}">
+    <td th:text="${item.commentWriter}"></td>
+    <td th:text="${item.commentContents}"></td>
+    <td th:text="${item.commentCreatedTime}"></td>
+  </tr>
+</table>
 </body>
 <script>
   const listFn=()=>{

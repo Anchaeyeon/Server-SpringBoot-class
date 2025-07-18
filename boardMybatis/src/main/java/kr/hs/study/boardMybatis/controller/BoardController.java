@@ -1,7 +1,9 @@
 package kr.hs.study.boardMybatis.controller;
 
 import kr.hs.study.boardMybatis.dto.BoardDTO;
+import kr.hs.study.boardMybatis.dto.CommentDTO;
 import kr.hs.study.boardMybatis.service.BoardService;
+import kr.hs.study.boardMybatis.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,8 @@ import java.util.List;
 public class BoardController {
     @Autowired
     private BoardService service;
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/")
     public String goIndex() {
@@ -45,6 +49,10 @@ public class BoardController {
         BoardDTO oneBoard = service.selectOne(id);
         System.out.println("ID: " + id);
         model.addAttribute("boardone", oneBoard);
+
+        List<CommentDTO> selectComment = commentService.select(id);
+        System.out.println("board id: " + id);
+        model.addAttribute("showCom", selectComment);
         return "showOneBoard";
     }
 
