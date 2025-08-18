@@ -1,11 +1,14 @@
 package kr.hs.study.FirstJPA.entity;
 
 import jakarta.persistence.*;
+import kr.hs.study.FirstJPA.dto.MemoDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.aot.generate.GeneratedTypeReference;
 
+@Data
 @Entity
 @Builder
 @NoArgsConstructor //매개변수 없는 기본 생성자
@@ -21,4 +24,13 @@ public class MemoEntity {
 
     @Column
     private String content;
+
+    //entity -> dto로 변환
+    public static MemoDTO toDTO(MemoEntity e) {
+        return MemoDTO.builder()
+                .id(e.getId())
+                .title(e.getTitle())
+                .content(e.getContent())
+                .build();
+    }
 }
