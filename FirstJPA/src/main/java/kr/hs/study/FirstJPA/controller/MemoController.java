@@ -17,8 +17,8 @@ public class MemoController {
         return "inputForm";
     }
 
-    @PostMapping("input_done")
+    @PostMapping("/input_done")
     public void input_done(MemoDTO dto) {
-
+        service.save(dto);
     }
 }
