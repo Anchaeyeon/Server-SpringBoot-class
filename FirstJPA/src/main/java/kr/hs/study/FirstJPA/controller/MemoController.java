@@ -21,8 +21,9 @@ public class MemoController {
     }
 
     @PostMapping("/input_done")
-    public void input_done(MemoDTO dto) {
+    public String input_done(MemoDTO dto) {
         service.save(dto);
+        return "inputDone";
     }
 
     @GetMapping("/list")
