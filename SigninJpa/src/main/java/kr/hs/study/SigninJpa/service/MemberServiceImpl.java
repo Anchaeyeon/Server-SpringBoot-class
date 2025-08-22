@@ -26,7 +26,7 @@ public class MemberServiceImpl implements MemberService{
         List<MemberEntity> e = repo.findAll();
 
         // 디티오 변수를 만들기 (어레이리스트)
-        List<MemberDTO> dto = new ArrayList<MemberDTO>();
+        List<MemberDTO> dto = new ArrayList<>();
 
         // 하나씩 엔티티를 디티오로 변환 (포문)
         for (MemberEntity member : e) {

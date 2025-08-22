@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>EMAIL</td>
+        <td>PASSWORD</td>
+        <td>NAME</td>
+        <td>상세 조회</td>
+        <td>삭제</td>
+    </tr>
+    <tr th:each="item:${member}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.memberEmail}"></td>
+        <td th:text="${item.memberPassword}"></td>
+        <td th:text="${item.memberName}"></td>
+    </tr>
+</table>
+</body>
+</html>

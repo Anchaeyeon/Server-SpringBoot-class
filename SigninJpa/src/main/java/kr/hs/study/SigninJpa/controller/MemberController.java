@@ -4,9 +4,12 @@ import kr.hs.study.SigninJpa.dto.MemberDTO;
 import kr.hs.study.SigninJpa.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class MemberController {
@@ -27,6 +30,13 @@ public class MemberController {
     public String signin_done(MemberDTO dto) {
         service.save(dto);
         return "redirect:/";
+    }
+
+    @GetMapping("/signin_list")
+    public String signin_list(Model model) {
+        List<MemberDTO> list = service.findAll();
+        model.addAttribute("member", list);
+        return "signin_list";
     }
 
     @GetMapping("/login")
