@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -35,5 +36,26 @@ public class MemberServiceImpl implements MemberService{
 
         // 리턴
         return dto;
+    }
+
+    @Override
+    public MemberDTO login(MemberDTO dto) {
+        // repository에 find 메서드 호출해서 가져와서 optionial<memberEntity> memberEmail에 대입하기
+        Optional<MemberEntity> memberEmail = repo.findBymemberEmail(dto.getMemberEmail());
+
+        if (memberEmail.isPresent()) { //이메일이 존재하면
+            MemberEntity me = memberEmail.get(); //optional을 벗긴다 (가져온다)
+            if (me.getMemberPassword().equals(dto.getMemberPassword())) {
+                MemberDTO a = MemberEntity.toDTO(me); // a : email, password
+                System.out.println("email, password : " + a);
+                return a;
+            }
+            else {
+                return null;
+            }
+        }
+        else {
+            return null;
+        }
     }
 }

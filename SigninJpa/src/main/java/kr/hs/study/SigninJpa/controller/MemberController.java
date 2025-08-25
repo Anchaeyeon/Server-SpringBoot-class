@@ -1,5 +1,6 @@
 package kr.hs.study.SigninJpa.controller;
 
+import jakarta.servlet.http.HttpSession;
 import kr.hs.study.SigninJpa.dto.MemberDTO;
 import kr.hs.study.SigninJpa.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,11 @@ public class MemberController {
     @GetMapping("/login")
     public String login() {
         return "login";
+    }
+
+    @PostMapping("/login_done")
+    public String login_done(MemberDTO dto, HttpSession session) {
+        MemberDTO re = service.login(dto);
+        return "login_result";
     }
 }
