@@ -58,4 +58,23 @@ public class MemberServiceImpl implements MemberService{
             return null;
         }
     }
+
+//    @Override
+//    public MemberDTO findById(Long id) {
+//        return null;
+//    }
+
+    @Override
+    public MemberDTO findBymemberEmail(String memberEmail) {
+        Optional<MemberEntity> memberEntity = repo.findBymemberEmail(memberEmail);
+        if (memberEntity!=null) {
+            MemberEntity me = memberEntity.get();
+            MemberDTO dto = MemberEntity.toDTO(me);
+
+            return dto;
+        }
+        else {
+            return null;
+        }
+    }
 }

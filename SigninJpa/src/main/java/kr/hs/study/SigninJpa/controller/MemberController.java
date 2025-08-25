@@ -50,10 +50,22 @@ public class MemberController {
         MemberDTO re = service.login(dto);
         if (re!=null) {
             session.setAttribute("loginEmail", re.getMemberEmail());
-            return "main";
+            return "login_done";
         }
         else {
             return "login";
         }
+    }
+
+    @GetMapping("/member/update")
+    public String login_update(Model model, HttpSession session) {
+        // 세션에서 이메일 가져와서 저장
+        String email = (String)session.getAttribute("loginEmail");
+
+        // 이메일 포함 다른 값 가져오기
+        MemberDTO member = service.findBymemberEmail(email);
+        model.addAttribute("member", member);
+
+        return "login_update";
     }
 }
