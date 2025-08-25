@@ -48,6 +48,12 @@ public class MemberController {
     @PostMapping("/login_done")
     public String login_done(MemberDTO dto, HttpSession session) {
         MemberDTO re = service.login(dto);
-        return "login_result";
+        if (re!=null) {
+            session.setAttribute("loginEmail", re.getMemberEmail());
+            return "main";
+        }
+        else {
+            return "login";
+        }
     }
 }
