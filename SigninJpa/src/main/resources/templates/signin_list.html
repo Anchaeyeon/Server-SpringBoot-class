@@ -5,13 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<table>
+<table border="1">
     <tr>
         <td>ID</td>
         <td>EMAIL</td>
         <td>PASSWORD</td>
         <td>NAME</td>
-        <td>상세 조회</td>
+        <td>상세조회</td>
         <td>삭제</td>
     </tr>
     <tr th:each="item:${member}">
@@ -19,6 +19,8 @@
         <td th:text="${item.memberEmail}"></td>
         <td th:text="${item.memberPassword}"></td>
         <td th:text="${item.memberName}"></td>
+        <td><a th:href="@{'/list/' + ${item.id}}">조회</a></td>
+        <td><a th:href="@{'/list/' + ${item.id} + '/delete'}">삭제</a></td>
     </tr>
 </table>
 </body>
