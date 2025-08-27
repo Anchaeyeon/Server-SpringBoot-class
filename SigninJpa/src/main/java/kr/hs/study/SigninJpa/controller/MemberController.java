@@ -68,4 +68,11 @@ public class MemberController {
 
         return "login_update";
     }
+
+    @GetMapping("/member/logout")
+    public String logout(HttpSession session) {
+        // 세션 삭제 (해제)
+        session.invalidate();
+        return "redirect:/";
+    }
 }
